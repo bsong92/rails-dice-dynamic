@@ -1,7 +1,7 @@
 class ZebraController < ApplicationController
   def rules
     # This action will render the home page
-    render({ :template => "game_templates/rules" })
+    render({ :template => "dice_templates/rules" })
   end
 
   def twobysix
