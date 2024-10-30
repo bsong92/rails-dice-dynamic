@@ -24,15 +24,25 @@ class ZebraController < ApplicationController
     render({ :template => "dice_templates/fivebyfour" })
   end
 
-  def roll_dice(num_dice, sides)
-    @num_dice = num_dice
-    @sides = sides
+  def roll_dice
+    @num_dice = params[:num_dice].to_i
+    @sides = params[:sides].to_i
     @rolls = []
 
     @num_dice.times do
-      die = rand(1..@sides)
-      @rolls.push(die)
-  end
-end
+      @rolls.push(rand(1..@sides))
+    end
 
+    render({ :template => "dice_templates/roll_result" })
+  end
+
+  # def roll_dice(num_dice, sides)
+  #   @num_dice = num_dice
+  #   @sides = sides
+  #   @rolls = []
+
+  #   @num_dice.times do
+  #     die = rand(1..@sides)
+  #     @rolls.push(die)
+  # end
 end

@@ -1,0 +1,9 @@
+<h1><%= @num_dice %>d<%= @sides %></h1>
+
+<!--<p>You rolled <%#= @num_dice %>d<%= @sides %></p>-->
+
+<ul>
+  <% @rolls.each do |roll| %>
+    <li><%= roll %></li>
+  <% end %>
+</ul>
